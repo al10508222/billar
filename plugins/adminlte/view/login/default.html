@@ -35,56 +35,32 @@
       });
    </script>
 </head>
-<body class="hold-transition login-page" style="background: #575756">
-   {if="$fsc->get_errors()"}
-   <div class="alert alert-danger">
-      <ul>{loop="$fsc->get_errors()"}<li>{$value}</li>{/loop}</ul>
-   </div>
-   {/if}
-   {if="$fsc->get_messages()"}
-   <div class="alert alert-success">
-      <ul>{loop="$fsc->get_messages()"}<li>{$value}</li>{/loop}</ul>
-   </div>
-   {/if}
-   {if="$fsc->get_advices()"}
-   <div class="alert alert-info">
-      <ul>{loop="$fsc->get_advices()"}<li>{$value}</li>{/loop}</ul>
-   </div>
-   {/if}
+<body class="hold-transition login-page" style="background: #000000">
+
    
-   <div class="login-box">
-      <div class="thumbnail">
-         {if="FS_DEMO"}
-         <b>Factura</b>Scripts
-         {elseif="file_exists('view/img/logo.png')"}
+   <div class="login-box" align="center">
+
+            <div class="login-box-body" style="border-radius: 100px;" >
          <img src="view/img/logo.png" alt="{$fsc->empresa->nombre}"/>
-         {else}
-         <b>Factura</b>Scripts
-         {/if}
       </div>
-      <div class="login-box-body">
-         <p class="login-box-msg">
+
+      <div style="border-radius: 100px">
+         <p class="login-box-msg" style="color: white">
             Incia sesión en
-            {if="FS_DEMO"}DEMO{elseif="$fsc->empresa->nombrecorto"}{$fsc->empresa->nombrecorto}{else}{$fsc->empresa->nombre}{/if}
+            {$fsc->empresa->nombrecorto}
          </p>
-         <form name="f_login" action="index.php?nlogin={$nlogin}" method="post" class="form" role="form">
-            {if="FS_DEMO"}
-            <input type="hidden" name="password" value="demo"/>
+         <form name="f_login" action="index.php?nlogin={$nlogin}" method="post" class="form" role="form" >
+
             <div class="form-group has-feedback">
-               <input type="nombre" class="form-control" name="user" placeholder="Escribe tu email"/>
-               <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-            </div>
-            {else}
-            <div class="form-group has-feedback">
-               <input type="text" name="user" class="form-control" placeholder="Usuario" autocomplete="off"/>
+               <input type="text" name="user" class="form-control" placeholder="Usuario" autocomplete="off" style="border-radius: 100px"/>
                <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-               <input type="password" class="form-control"  name="password" maxlength="32" placeholder="Contraseña"/>
+               <input type="password" class="form-control"  name="password" maxlength="32" placeholder="Contraseña" style="border-radius: 100px" />
                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
-            {/if}
-            <button type="submit" class="btn btn-primary btn-block btn-flat">
+            
+            <button type="submit" class="btn btn-primary btn-block btn-flat" style="border-radius: 100px">
                <i class="fa fa-sign-in"></i>&nbsp; Inicia sesión
             </button>
          </form>
